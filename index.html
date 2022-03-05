@@ -15,7 +15,10 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
 
-        
+        <!-- S3 connection-->
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1086.0.min.js"></script>
+        <script type="text/javascript" src="js/S3Client.js"></script>
+        <script type="text/javascript" src="js/credentials/credentialsS3.js"></script>
     </head>
     <body>
         <!-- Navigation-->
@@ -116,3 +119,7 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+
+<script>
+    listAlbums();
+</script>

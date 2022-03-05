@@ -1,5 +1,3 @@
-import './credentials/credentialsS3.js';
-
 var S3ClientFactory = {};
 S3ClientFactory.newClient = function (config) {
     var albumBucketName = BUCKET_NAME;
@@ -26,5 +24,5 @@ function listAlbums() {
         if (err) console.log(err, err.stack);
         else console.log(data);
     });
-  }
+}
   
