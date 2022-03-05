@@ -1,11 +1,12 @@
+import './credentials/credentialsS3.js';
 
 var S3ClientFactory = {};
 S3ClientFactory.newClient = function (config) {
-    var albumBucketName = 'BUCKET_NAME';
+    var albumBucketName = BUCKET_NAME;
 
-    AWS.config.region = 'REGION_NAME'; // Region
+    AWS.config.region = REGION_NAME;
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-        IdentityPoolId: 'IDENTITY_POOL_ID',
+        IdentityPoolId: IDENTITY_POOL_ID,
     });
 
     // Create a new service object
