@@ -6,14 +6,19 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Clean Blog - Start Bootstrap Theme</title>
+
+        <!-- CSS-Boostrap-->
         <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../css/styles.css" rel="stylesheet" />
+        
+        <!-- S3 connection-->
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1086.0.min.js"></script>
+        <script type="text/javascript" src="../js/S3Client.js"></script>
+        <script type="text/javascript" src="../js/credentials/credentialsS3.js"></script>
+        <script type="text/javascript" src="../js/S3/getPosts.js"></script>
     </head>
     <body>
         <!-- Navigation-->
@@ -30,10 +35,7 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="../about.html">About</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Posts</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                              <li><a class="dropdown-item" href="post1.html">Post 1</a></li>
-                              <li><a class="dropdown-item" href="post2.html">Post 2</a></li>
-                            </ul>
+                            <ul class="dropdown-menu" id="posts_dropdown" aria-labelledby="dropdown01" />
                         </li>
                     </ul>
                 </div>
@@ -114,3 +116,7 @@
         <script src="../js/scripts.js"></script>
     </body>
 </html>
+
+<script>
+    getPosts(true);
+</script>

@@ -35,10 +35,7 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Posts</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                              <li><a class="dropdown-item" href="posts/post1.html">Post 1</a></li>
-                              <li><a class="dropdown-item" href="posts/post2.html">Post 2</a></li>
-                            </ul>
+                            <ul class="dropdown-menu" id="posts_dropdown" aria-labelledby="dropdown01" />
                         </li>
                     </ul>
                 </div>
@@ -121,5 +118,5 @@
 </html>
 
 <script>
-    getPosts();
+    getPosts(false);
 </script>
