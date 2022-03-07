@@ -1,8 +1,19 @@
+/**
+ * This function return all posts saved in the /posts directory from our S3.
+ * 
+ * @returns data object (json) with posts from S3
+ */
 const getPosts = () => {
     var response = s3.listObjectsV2({ Delimiter: '/posts' }).promise();
     return response;
 }
 
+/**
+ * This function create the necessary HTML to create the main menu of website
+ *  
+ * @param {boolean} fromPost The condition to know where are the page executed true - /post directory || false - / directory
+ * @param {json} s3objects The object got in getPorts()
+ */
 function createMenu(fromPost, s3objects) {
 
     s3objects.then(function (data) {
@@ -22,6 +33,12 @@ function createMenu(fromPost, s3objects) {
     });
 }
 
+/**
+ * This funciton generate the HTMl code to create the dashboard with all posts of the blog. 
+ * It gets all HTMl file from s3 bucket one by one.
+ * 
+ * @param {json} s3objects The object got in getPorts()
+ */
 function createDashboard(s3objects) {
     s3objects.then(function (data) {
         var posts = data.Contents.filter(file => file.Key.startsWith("posts/"));
@@ -39,6 +56,11 @@ function createDashboard(s3objects) {
     });
 }
 
+/**
+ * This function is used to create the necessary div where we will create the preview post.
+ * 
+ * @param {number} postNum The number of the post 
+ */
 function generateDashboardStructure(postNum) {
     var div = document.createElement("div");
         div.setAttribute("class", "post-preview");
@@ -47,6 +69,12 @@ function generateDashboardStructure(postNum) {
         document.getElementById("posts_preview").appendChild(div);
 }
 
+/**
+ * This function get the necessary information from HTML to insert it in the dashboard.
+ *  
+ * @param {json} object The S3 object 
+ * @returns The title, subtitle, creator with data creation 
+ */
 function getDashboardInfo(object) {
     let bodyStr = object.Body.toString();
     let html = jQuery.parseHTML(bodyStr);
@@ -57,6 +85,16 @@ function getDashboardInfo(object) {
     return [title, subtitle, creator];
 }
 
+/**
+ * This function generate the necessary HTML to show the preview of the post.
+ * 
+ * @param {string} file The path of the file 
+ * @param {number} num The number of the post
+ * @param {string} title The main_title of the post
+ * @param {string} subtitle The main_subtitle of the post
+ * @param {string} creator The main_creator of the post
+ * @returns HTML dashboard preview post
+ */
 function generateDashboardCode(file, num, title, subtitle, creator) {
 
     var htmlGenerated = '<a href="' + file + '">';
