@@ -13,9 +13,9 @@ function createMenu(fromPost, s3objects) {
             let j = i + 1;
             if (fromPost) {
                 var post = posts[i].Key.replace("posts/", "");
-                HTMLgenerated += '<li><a class="dropdown-item" href="' + post + '">Post' + j + '</a></li>';
+                HTMLgenerated += '<li><a class="dropdown-item" href="' + post + '">' + post.replace(".html", "").replace("_", " ") + '</a></li>';
             } else {
-                HTMLgenerated += '<li><a class="dropdown-item" href="' + posts[i].Key + '">Post' + j + '</a></li>';
+                HTMLgenerated += '<li><a class="dropdown-item" href="' + posts[i].Key + '">' + posts[i].Key.replace("posts/", "").replace(".html", "").replace("_", " ") + '</a></li>';
             }
         }
         

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Clean Blog - Start Bootstrap Theme</title>
+
+        <!-- CSS-Boostrap-->
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link href="../css/styles.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../js/scripts.js"></script>
+        
+        <!-- S3 connection-->
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1086.0.min.js"></script>
+        <script type="text/javascript" src="../js/S3Client.js"></script>
+        <!-- create presigned URL from credentials file in AWS S3 console-->
+        <script type="text/javascript" src="https://cqs-blog.s3.eu-central-1.amazonaws.com/js/credentials/credentialsS3.js?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDoaCWV1LXdlc3QtMyJHMEUCIG3MXyDAv%2BIrXV61P01YKMi0SrRVbqadqYlXrmDWi7y3AiEAn%2FXSVOjlM0XeV9A0PYsOQxegtmQb2R1Exp4uYeuy%2F%2Boq7QIIo%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw4Mjk1OTM0MzIzMzQiDJ7G%2FKMVRNXzcIzHWCrBAvts1zKKHXM%2BX%2BVaFyZ9%2FzSitbHrrBmue5jfO73XgRRcQmMHgRK9GHL9Xgtpzyi9dFBmcoxg9vRjydfDv6oQ6ar%2Bu4WmEndxP10HqdPeQLgS%2BPN3TzKl4ASkOJY1TYP0NQv230mutBs0aJPy%2Bm0h%2BmfxX16Bc4CNQdi67PJd%2F%2B9%2FZc5y0STX4RbcCmk%2BWfIJzohBJs7N4bTo9iNw8AUc1rlWx07PLvnpKCBONmPPLzx6EaqmgfbsPg67n5FfrwHp0Qc%2FXhGfBNKZWI2xdm3siSZO5BdPuRn0Fisl9Mdvmj%2F%2B3lE7FD6yz0uwLiFkdkgc6GbV9rtvdCpavGuUZV%2FCcfEQxNIpvbOmVcDgcLVlonwAYJPOOn5o3vP09O9QnyW%2BaaF8HBSv5Dzacswsj7zPIkBzdVq1OBQ0UbOc2EaqH5bNujCIrJeRBjqzArxFXtUrK%2F0GUX0%2FlRq4YkHpoYJcGGrLLWRLEgqsxDJuNo1NHsepCQShjZFFSeloHPyeqCDXFAlqK9u5INI2eeY4oVpngpBXk7GZXXBupZ2SenZT98T6mCraTTuy5KnFMw6YUvw62bUKaLphU273%2BmGB352uesF8oSuRX06Nd5YZA7D75fkJS5r4QX9HxTT%2BBSgf4kGD8MLfuyGYtRAU9X1BJX8k2%2FEQpVX0S6yEYUGNhtGPHzUiAvIPrIQ0HSzyCdlz5veU%2FCqGmcz0p4uZZo%2BU%2Bh%2Br4vYPPEoYlk%2FwTrV4QM%2BqimhSiKhQ%2Fg%2FEygqc8fDTu4uFKtk7pCRtbphWKVJ6L%2Fh4bCUIgQgBwPXJJJnMxPa6rHPZyFnLfo7%2B7nxx28HN8dUCuBPjW7tAjtc0GRI2WPE%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220307T095625Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604800&X-Amz-Credential=ASIA4CJ47GEHEPR7CJUR%2F20220307%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Signature=34171f2b7061586c969dede847bb9b9e17b4e88d3d1c1fe01914efadb80a14c5"></script>
+        <script type="text/javascript" src="../js/S3/posts.js"></script>
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">CQS Blog</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="../about.html">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Posts</a>
+                            <ul class="dropdown-menu" id="posts_dropdown" aria-labelledby="dropdown01" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('../assets/img/wheet.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>The effect of war on food prices</h1>
+                            <span class="meta">
+                                Posted by
+                                <a href="https://www.bbc.com/news/uk-scotland-60644376">BBC</a>
+                                on March 07, 2022
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>The prospect of an oil embargo on Russia, at least for its US and European customers, has sent the price soaring once more.</p>
+                        <p>Four months ago, the price of Brent crude was below $70 per barrel. Last week, it rose 21%. As the new week's trading began in Australia, the price of benchmark Brent crude surged 10%, hitting $130 per barrel. Traders are reported saying it could surge through the $147.50 record price set in the turmoil of 2008.</p>
+                        <p>A lot of that can be explained by comments on Sunday made by Antony Blinken, the US Secretary of State, saying in an NBC interview: "We are now in very active discussions with our European partners about banning the import of Russian oil to our countries, while of course, at the same time, maintaining a steady global supply of oil".</p>
+                        <p>The discomfort of imposing sanctions while continuing to send $1bn per day to Russia to pay for its oil and gas (Russia supplies 8% of US oil demand) is turning the tide towards sanctions that could bite very hard in fuel prices for Europe, the US and beyond.</p>
+                        <p>The concern in Europe is about losing the supply of Russia's natural gas. Its price ended last week on a spectacular surge, beating the record set in December, and getting very close to £5 per therm. Its trend level before it began to rise in the middle of last year was around 40p.</p>
+                        
+                        <h2 class="section-heading">Wheat surges</h2>
+                        <p>But it's not just energy. Where raw materials are treated and traded as global commodities, war in Ukraine has sent other prices sharply up, and stock markets down. Reuters reports that last week saw nickel rise 19%, aluminium by 15%, zinc was up 12%, and copper increased 8%.</p>
+                        <p>In precious metals too, gold is up, partly because investors see it as a safe haven. And palladium is one to watch. Russia has 40% of global production. The rare metal, at more than $3,000 per ounce, has catalytic uses in car engines and industry. Prices last week were up 25%.</p>
+                        <p>The one to watch for all of us, even in the world's poorer households where they have little concern about the price of gas for heating or oil for cars, is food.</p>
+                        <p>Securing a futures contract to supply wheat saw a 60% surge last week, and corn was up 15%.</p>
+                        <a href="#!"><img class="img-fluid" src="../assets/img/farm.jpg" alt="..." /></a>
+                        <p>Russia and Ukraine together account for around 30% of internationally traded wheat. Not much comes to Europe, instead going from Black Sea ports to the Middle East and Africa.</p>
+                        <p>However, several ports are shut due to the war, and Ukraine's land infrastructure is being pounded by Russian shells. As a globally traded commodity, that supply disruption means the price goes up for everyone.</p>
+
+                        <h2 class="section-heading">Malnutrition</h2>
+                        <p>Conflict in Ukraine is far from being the only pressure on food prices. They were rising anyway.</p>
+                        <p>Extreme weather has disrupted crop growth with torrential rain in Germany, excessive heat in Canada and drought in parts of South America. Climate modellers are telling us to get used to that, and to plan agriculture to meet the growing challenge.</p>
+                        <p>It is pointed out that lower harvests hit prices, and therefore affect poorest households first. Those modellers forecast a reversal in the falling number of people, over recent decades, who are unable to afford sufficient food energy to avoid malnutrition, affecting as many as 80 million people.</p>
+                        <p>Food prices have been affected by Covid. Some produce has lacked the migrant farm labour to harvest it, from Malaysian palm oil to Scottish berries. Easing of infection restrictions has seen demand come back, and that pushes up prices.</p>
+                        <p>Supply chains have been disrupted, linked to much higher costs of sea-going freight.</p>
+                        <p>Machinery costs have been rising steeply, where the chip shortage affecting car production has also extended to increasingly sophisticated tractors.</p>
+                        <p>Rising energy prices have fed through to higher transport costs of reaching market, and much higher fertilizer prices. Natural gas is a necessary input for ammonia and nitrates.</p>
+                        <p>These are not costs that farmers can easily pass on to customers. The market sets the price. But if fertilizer becomes more expensive, less is used, yields fall, so that total supply falls too, and after some time, prices go up.</p>
+                        
+                        <h2 class="section-heading">Cooking oil</h2>
+                        <p>Global food prices are tracked by the United Nations' farming division, the Food and Agriculture Organisation. The monthly figures just published show sugar was the only major farm produce to see a fall in price between January and February, though it is up 10% on February 2021.</p>
+                        <p>The inflation of other prices was picking up pace, and most of the data was collected before Russian tanks rolled into Ukraine.</p>
+                        <p>The FAO food price index was up 20.7% on February last year, and nearly 4% in one month.</p>
+                        <a href="#!"><img class="img-fluid" src="../assets/img/grandma_buing.jpg" alt="..." /></a>
+                        <p>Meat was up 15% in the year, driven by increased demand for beef and pork. Dairy rose by 25%, aided by lower than expected milk supply in Western Europe and Oceania. Neither is thought to reflect disruption by Russia's invasion of Ukraine.</p>
+                        <p>But while tensions built on the border, cereal prices were rising by 3% between January and February, and by 15% over the preceding year.</p>
+                        <p>And as Russia produces around 80% of the world's vegetable oils, that helps explain an 8.5% rise in one month, according to the FAO, and 37% over the year.</p>
+                        <p>Next months' figures will include the impact on prices from a hot war starting, and traders adjusting to the disruption of supply of Ukrainian and Russian farm produce, as well as shipping.</p>
+                        
+                        <h2 class="section-heading">Household bills</h2>
+                        <p>But consumers don't need to wait. They can already see prices rising. Britain's consumer price inflation rate has already hit 5.5%.</p>
+                        <p>War has uprated economists' predictions of where it will peak, to forecasts north of 8% and even as high as 10%.</p>
+                        <p>The US is already well ahead, with inflation in the year to January at 7.5%, the highest for 40 years. The February figure is issued on Thursday, and the US Fed, America's central bank, is expected to raise interest rates a week later.</p>
+                        <p>Inflation has become a highly salient political issue for President Joe Biden in his mid-term election year, not least for the cost of filling a car with gasoline. The price of a gallon is up, on average, 45% since last year, according to the American Automobile Association, and 11% in the past week to $4 (£3.03).</p>
+                        <p>In the UK, transport fuel costs were already higher, due to tax. And due to tax, they don't increase at the same pace as the crude oil price. However, the cost of a litre of unleaded it's hitting record prices every day, and the shock to the system of the Ukraine invasion won't be felt for some weeks. More politically salient, at least for now, is the rising cost of household energy, up 54% in April and by another whopping increase in October, when the price cap is adjusted. Perhaps if it went up incrementally, it would be less noticeable and less awkward for the government.</p>
+                        <p>The rising cost of food will also bring the Ukraine war into every household budget, and put pressure on governments to respond.</p>
+                        
+                        <p>
+                            Placeholder text by
+                            <a href="https://www.bbc.com/">BBC</a>
+                            &middot; Images by
+                            <a href="https://www.bbc.com/">BBC</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="https://github.com/eduardfores/CQS_blog">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; CQS_blog 2022</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
+
+<script>
+    var s3 = S3ClientFactory.newClient();
+    var global_posts = getPosts();
+    createMenu(true, global_posts);
+</script>
