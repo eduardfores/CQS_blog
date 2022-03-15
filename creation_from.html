@@ -45,37 +45,37 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="my-5">
-                            <form id="postForm" method="post">
+                            <form method="post" enctype="application/x-www-form-urlencoded", action="https://7nd7m7cxwa.execute-api.eu-central-1.amazonaws.com/v1/generate">
                                 <div class="form-floating">
-                                    <input class="form-control" id="title" type="text" placeholder="Enter the title..." />
+                                    <input class="form-control" id="title" type="text" name="title" placeholder="Enter the title..." />
                                     <label for="title">Title</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="sub-title" type="text" placeholder="Enter the sub-title..." />
+                                    <input class="form-control" id="sub-title" type="text" name="sub-title"placeholder="Enter the sub-title..." />
                                     <label for="sub-title">Sub-title</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="posted-by" type="text" placeholder="Posted by..."/>
+                                    <input class="form-control" id="posted-by" type="text" name="posted-by" placeholder="Posted by..."/>
                                     <label for="posted-by">Posted By</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="texted-by" type="text" placeholder="Texted By..." />
+                                    <input class="form-control" id="texted-by" type="text" name="texted-by" placeholder="Texted By..." />
                                     <label for="texted-by">Texted By</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="texted-by-link" type="url" placeholder="Texted By Link..."/>
+                                    <input class="form-control" id="texted-by-link" type="url" name="texted-by-link"placeholder="Texted By Link..."/>
                                     <label for="texted-by-link">Texted By Link</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="images-by" type="text" placeholder="Images By..." />
+                                    <input class="form-control" id="images-by" type="text" name="images-by" placeholder="Images By..." />
                                     <label for="images-by">Images By</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="images-by-link" type="url" placeholder="Images By Link..."/>
+                                    <input class="form-control" id="images-by-link" type="url" name="images-by-link" placeholder="Images By Link..."/>
                                     <label for="images-by-link">Images By Link</label>
                                 </div>
                                 <div class="form-floating">
-                                    <textarea class="form-control" id="message" placeholder="Enter your message here..." style="height: 12rem"></textarea>
+                                    <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." style="height: 12rem"></textarea>
                                     <label for="message">Message</label>
                                 </div>
                                 <br />
@@ -84,13 +84,13 @@
                                 <p>To add one paragraph use the etiquete <code>&lt;p&gt;paragraph&lt;/p&gt;</code>.</p>
                                 <p>To add one image use the etiquete <code>&lt;img class="img-fluid" src="../assets/img/IMAGE_NAME.jpg" alt="..." /&gt;</code>.</p>
 
-                                <button class="btn btn-primary text-uppercase" id="submitButton">Send</button>
+                                <input class="btn btn-primary text-uppercase" type="submit" name="submit" value="generate"/>
                             </form>
 
                             <form target="dummyframe" id="formImg" method="post" enctype="multipart/form-data", action="https://fk3rgjje9d.execute-api.eu-central-1.amazonaws.com/v1/upload">
                                 <div class="form-floating">
                                     <input class="form-control" type="file" name="file"/>
-                                    <input class="btn btn-primary text-uppercase" type="submit" name="submit" value="Upload image" onClick="iframeDisplayNone()">
+                                    <input class="btn btn-primary text-uppercase" type="submit" name="submit" value="Upload image" onClick="iframeDisplayNone()"/>
                                 </div>
                             </form>
 
