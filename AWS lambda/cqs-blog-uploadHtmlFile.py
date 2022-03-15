@@ -43,8 +43,9 @@ def lambda_handler(event, context):
         # filename from form-data
         # file_name = json.loads(multipart_content["Metadata"])["filename"]
         # u uploading file to S3
-        s3_upload = s3.put_object(
-            Bucket=BUCKET_NAME, Key=PATH_IMG + file_name, Body=multipart_content["file"]
+        
+        s3_upload = s3.put_object(ACL='public-read', Bucket=BUCKET_NAME, 
+        Key=PATH_IMG + file_name, Body=multipart_content["file"]
         )
 
         # on upload success
