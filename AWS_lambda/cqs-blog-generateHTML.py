@@ -3,9 +3,9 @@ import boto3
 import datetime
 import urllib.parse
 
-ACCESS_KEY=''
-SECRET_KEY=''
-BUCKET_NAME='cqs-blog'
+ACCESS_KEY='access_key'
+SECRET_KEY='secret_key'
+BUCKET_NAME='cqs-bucket_name'
 TEMPALTE_FILE='post_template.html'
 POSTS_PATH='posts/'
 
