@@ -77,7 +77,9 @@ def upload_html_s3(html,title):
     s3 = boto3.client("s3",aws_access_key_id=ACCESS_KEY, aws_secret_access_key=SECRET_KEY)
     
     return s3.put_object(ACL='public-read', Bucket=BUCKET_NAME, 
-    Key=POSTS_PATH + title, Body=encoded_string)
+    Key=POSTS_PATH + title, Body=encoded_string,
+        CacheControl="max-age=0,no-cache,no-store,must-revalidate",
+        ContentType="text/html")
     
     
 def lambda_handler(event, context):
