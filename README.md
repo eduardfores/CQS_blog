@@ -91,7 +91,9 @@ You have to configure S3 with static host endpoint
  
 * IAM premissions
 
-You must create one user to give permissions to put files in S3 you can use the file [PutObject.json]() to create these permissions. This user will used fom the Lambdea functions to generate the HTMLs
+You must create one user to give permissions to put files in S3 you can use the file [PutObject.json](https://github.com/eduardfores/CQS_blog/AWS_permissions/PutObject.json) to create these permissions. This user will used fom the Lambdea functions to generate the HTMLs. The ACCESS_KEY and SECRET_KEY have to be add in the python files in [AWS Lambda](https://github.com/eduardfores/CQS_blog/AWS_lambda).
+
+The credentials to read S3 from the HTML you have to fill the information of [credentialsS3.js](https://github.com/eduardfores/CQS_blog/credentials/credentialsS3.js). In this case we don't need a user because we use the cognito-identity directly. The permisions for this new rol can be [ListObject.json](https://github.com/eduardfores/CQS_blog/AWS_permissions/ListObject.json)
 
 ### Installation
 

@@ -104,4 +104,4 @@ dist
 .tern-port
 
 #AWS
-js/credentials/
+js/credentials_real/
