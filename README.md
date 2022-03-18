@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/eduardfores/CQS_blog/blob/main/README_IMGS/Amazon_Web_Services_Logo.png">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="README_IMGS/Amazon_Web_Services_Logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Serverless Blog in AWS </h3>
