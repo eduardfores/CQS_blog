@@ -65,15 +65,53 @@ So in this project there are:
 This section list the frameworks/libraries used to create this blog. 
 
 * [S3 AWS](https://aws.amazon.com/es/s3/)
-* [API Gateway AWS] (https://aws.amazon.com/es/api-gateway/)
-* [Lambda AWS] (https://aws.amazon.com/es/lambda/)
+* [API Gateway AWS](https://aws.amazon.com/es/api-gateway/)
+* [Lambda AWS](https://aws.amazon.com/es/lambda/)
 * [JavaScript](https://www.javascript.com/)
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- GETTING STARTED -->
+## Getting Started
 
+In this section I talk you about how you can import this project to your AWS account to test it. 
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+
+* S3 configuration
+
+You have to configure S3 with static host endpoint 
+[Hostinc Static in AWS](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html)
+
+<span style="color: red"> All files in this bucket must be PUBLIC </span>
+ 
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+
+1. Get a free API Key at [https://example.com](https://example.com)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `config.js`
+   ```js
+   const API_KEY = 'ENTER YOUR API';
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
