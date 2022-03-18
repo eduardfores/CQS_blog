@@ -89,9 +89,9 @@ You have to configure S3 with static host endpoint
 
 <span style="color: red"> All files in this bucket must be PUBLIC </span>
  
-  ```sh
-  npm install npm@latest -g
-  ```
+* IAM premissions
+
+You must create one user to give permissions to put files in S3 you can use the file [PutObject.json]() to create these permissions. This user will used fom the Lambdea functions to generate the HTMLs
 
 ### Installation
 
