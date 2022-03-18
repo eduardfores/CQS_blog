@@ -121,9 +121,8 @@ With the step one you will have a serverless static website and with the other s
 
 _This section is to explain how we will use the [creation_from.html](https://github.com/eduardfores/CQS_blog/blob/main/creation_from.html)_
 
-To access to this page you have to use http://{s3.host.url}/creation_from.html. Then, you can start to fill the fields of the form.
-
-The most tricky part is the message and the images.
+To access to this page you have to use: ```http://{s3.host.url}/creation_from.html```
+Then, you can start to fill the fields of the form. The most tricky part is the message and the images.
 
 To send a message you have to send HTML code the instructions are below the textarea. E.g.
 
@@ -137,6 +136,13 @@ You can upload one image in one click the image will save into _assets/img/_ dir
     <img src="README_IMGS/Images.png" alt="Images"/>
 </div>
 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
