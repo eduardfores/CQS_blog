@@ -36,11 +36,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -105,8 +101,8 @@ The credentials to read S3 from the HTML you have to fill the information of [cr
 
 _Below is the instructions to install the the application in AWS Step by step._
 
-1. Upload all files related with the Web page in S3 bucket configured previouslly. [assests](https://github.com/eduardfores/CQS_blog/tree/main/assets), [css](https://github.com/eduardfores/CQS_blog/tree/main/css), [js] https://github.com/eduardfores/CQS_blog/tree/main/js, [lib](https://github.com/eduardfores/CQS_blog/tree/main/lib), [posts](https://github.com/eduardfores/CQS_blog/tree/main/posts) and all html files fro mthe root.
-
+1. Upload all files related with the Web page in S3 bucket configured previouslly. [assests](https://github.com/eduardfores/CQS_blog/tree/main/assets), [css](https://github.com/eduardfores/CQS_blog/tree/main/css), [js](https://github.com/eduardfores/CQS_blog/tree/main/js), [lib](https://github.com/eduardfores/CQS_blog/tree/main/lib), [posts](https://github.com/eduardfores/CQS_blog/tree/main/posts) and all html files from the root.
+ 
 2. Create 1 lambda function to upload files from HTML and copy paste the [UploadHTMLFile.py](https://github.com/eduardfores/CQS_blog/blob/main/AWS_lambda/cqs-blog-uploadHtmlFile.py). Remember to add ACCESS_KEY and SECRET_KEY.
 
 3. Create API GateWay (REST API) create a resource and create a POST linked to our lambda funciton. [Tutorial](https://www.youtube.com/watch?v=UUl84sjLRZw). It must to be a POST with Content-Type = "multipart/form-data".
