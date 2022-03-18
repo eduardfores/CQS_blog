@@ -72,6 +72,8 @@ This section list the frameworks/libraries used to create this blog.
 * [API Gateway AWS](https://aws.amazon.com/es/api-gateway/)
 * [Lambda AWS](https://aws.amazon.com/es/lambda/)
 * [JavaScript](https://www.javascript.com/)
+* [Python](https://www.python.org/)
+* [Boto3](https://aws.amazon.com/es/sdk-for-python/)
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
 
