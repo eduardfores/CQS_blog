@@ -58,7 +58,7 @@ So in this project there are:
 * HTML Generation with Lambda functions
 * Save HTML files from Lambda to S3   
 
-<p style="color: red"> The creation_from.html is disabled in the demo.!! </p>
+- The creation_from.html is disabled in the demo.!! 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
