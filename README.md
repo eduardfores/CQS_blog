@@ -58,8 +58,11 @@ So in this project there are:
 * HTML Generation with Lambda functions
 * Save HTML files from Lambda to S3   
 
+<p style="color: red"> The creation_from.html is disabled in the demo.!! </p>
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- BUILT STARTED -->
 ### Built With
 
 This section list the frameworks/libraries used to create this blog. 
@@ -85,9 +88,9 @@ This is an example of how to list things you need to use the software and how to
 * S3 configuration
 
 You have to configure S3 with static host endpoint 
-[Hostinc Static in AWS](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html)
+[Hosting Static in AWS](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html)
 
-<span style="color: red"> All files in this bucket must be PUBLIC </span>
+<p style="color: red"> All files in this bucket must be PUBLIC </p>
  
 * IAM premissions
 
@@ -97,26 +100,45 @@ The credentials to read S3 from the HTML you have to fill the information of [cr
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Below is the instructions to install the the application in AWS Step by step._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Upload all files related with the Web page in S3 bucket configured previouslly. [assests](https://github.com/eduardfores/CQS_blog/tree/main/assets), [css](https://github.com/eduardfores/CQS_blog/tree/main/css), [js] https://github.com/eduardfores/CQS_blog/tree/main/js, [lib](https://github.com/eduardfores/CQS_blog/tree/main/lib), [posts](https://github.com/eduardfores/CQS_blog/tree/main/posts) and all html files fro mthe root.
+
+2. Create 1 lambda function to upload files from HTML and copy paste the [UploadHTMLFile.py](https://github.com/eduardfores/CQS_blog/blob/main/AWS_lambda/cqs-blog-uploadHtmlFile.py). Remember to add ACCESS_KEY and SECRET_KEY.
+
+3. Create API GateWay (REST API) create a resource and create a POST linked to our lambda funciton. [Tutorial](https://www.youtube.com/watch?v=UUl84sjLRZw). It must to be a POST with Content-Type = "multipart/form-data".
+
+4. Repeat the step 2. and 3. with the lambda function to generate the HTML [GenerateHTML.py](https://github.com/eduardfores/CQS_blog/blob/main/AWS_lambda/cqs-blog-generateHTML.py). But, It must to be a POST with Content-Type = "application/x-www-form-urlencoded".
+
+With the step one you will have a serverless static website and with the other steps you get the necessary functions to create new posts to this website.
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+<!-- USAGE EXAMPLES -->
+## HTML Generation
+
+_This section is to explain how we will use the [creation_from.html](https://github.com/eduardfores/CQS_blog/blob/main/creation_from.html)_
+
+To access to this page you have to use http://{s3.host.url}/creation_from.html. Then, you can start to fill the fields of the form.
+
+The most tricky part is the message and the images.
+
+To send a message you have to send HTML code the instructions are below the textarea. E.g.
+
+<div align="center">
+    <img src="README_IMGS/Message.png" alt="Message"/>
+</div>
+
+You can upload one image in one click the image will save into _assets/img/_ directory.
+
+<div align="center">
+    <img src="README_IMGS/Images.png" alt="Images"/>
+</div>
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/eduardfores/CQS_blog/blob/main/LICENSE
