@@ -36,7 +36,7 @@
       </ul>
     </li>
     <li><a href="#HTML-generation">HTML Generation</a></li>
-    <li><a href="#architecture">AWS Architecture</a></li>
+    <li><a href="#AWS-architecture">AWS Architecture</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
