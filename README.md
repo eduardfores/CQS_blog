@@ -35,7 +35,8 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#HTML-generation">HTML Generation</a></li>
+    <li><a href="#architecture">AWS Architecture</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
@@ -51,7 +52,7 @@ So in this project there are:
 * Hosting Static blog in S3
 * The blog reads from S3 bucket the posts
 * Upload images to S3 with public permissions
-* HTML Generation with Lambda functions
+* Generate HTML with Lambda functions
 * Save HTML files from Lambda to S3   
 
 ```diff
@@ -136,6 +137,14 @@ You can upload one image in one click the image will save into _assets/img/_ dir
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+## AWS Architecture
+
+_The Architecture of this project is based with the [CQS pattern](https://es.wikipedia.org/wiki/Command%E2%80%93query_separation) but in this case I modify some parts of the pattern because the application is single writer - multiple readers_
+
+<div align="center">
+    <img src="README_IMGS/CQS_Blog-diagram.png" alt="Diagram"/>
+</div>
 
 <!-- LICENSE -->
 ## License
